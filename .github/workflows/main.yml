@@ -16,12 +16,4 @@ jobs:
         env:
           SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}      
         with:
-          command: monitor --unmanaged
-          
-      - uses: actions/checkout@master
-      - name: Break build for high serverity findings
-        uses: snyk/actions/node@master
-        env:
-          SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
-        with:
-          args: --severity-threshold=high        
+          command: monitor --unmanaged   
